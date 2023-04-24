@@ -32,9 +32,10 @@ class CNN():
         self.model.add(layers.BatchNormalization())
         self.model.add(layers.Dropout(0.1))
 
-        self.model.add(layers.TimeDistributed(layers.Flatten()))
-        self.model.add(layers.LSTM(128))
+        #self.model.add(layers.TimeDistributed(layers.Flatten()))
+        #self.model.add(layers.LSTM(128))
 
+        self.model.add(layers.Flatten())
         self.model.add(layers.Dense(64,activation=act))
         self.model.add(layers.Dropout(0.2))
         self.model.add(layers.Dense(32,activation=act))
